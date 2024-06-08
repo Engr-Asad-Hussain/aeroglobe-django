@@ -1,9 +1,6 @@
 # ruff: noqa: E501
 from .base import *  # noqa: F403
-from .base import DATABASES
-from .base import INSTALLED_APPS
-from .base import SPECTACULAR_SETTINGS
-from .base import env
+from .base import DATABASES, INSTALLED_APPS, SPECTACULAR_SETTINGS, env
 
 # GENERAL
 # ------------------------------------------------------------------------------
