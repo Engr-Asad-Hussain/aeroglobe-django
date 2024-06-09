@@ -50,3 +50,8 @@ pytest
 ```sh
 python manage.py runserver
 ```
+
+9. Cleanup resources
+```sh
+docker-compose -f docker-compose.db.yaml down -v
+```
