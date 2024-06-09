@@ -7,7 +7,7 @@ from rest_framework.permissions import (
 from rest_framework.request import Request
 
 from django_ems.events.models import Events
-from django_ems.events.serializers import EventsSerializer
+from django_ems.events.serializers import EventsPagination, EventsSerializer
 
 
 class IsOwner(BasePermission):
@@ -20,6 +20,7 @@ class IsOwner(BasePermission):
 class EventsViewSet(viewsets.ModelViewSet):
     queryset = Events.objects.all().order_by("id")
     serializer_class = EventsSerializer
+    pagination_class = EventsPagination
     permission_classes = [IsAuthenticatedOrReadOnly, IsOwner]
 
     def perform_create(self, serializer: EventsSerializer):
