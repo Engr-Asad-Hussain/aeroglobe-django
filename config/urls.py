@@ -23,6 +23,7 @@ urlpatterns = [
     # Your stuff: custom urls includes go here
     # ...
     path("", include("django_ems.users_auth.urls", namespace="users_auth")),
+    path("", include("django_ems.events.urls", namespace="events")),
     # Media files
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
 ]
