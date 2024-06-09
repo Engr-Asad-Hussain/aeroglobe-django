@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  postgres:
+    container_name: postgresql_django_db
+    image: postgres:16
+    networks:
+      - comm_network
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin123
+      - POSTGRES_DB=postgres-django
+
+networks:
+  comm_network:
+    name: "postgresql-django-network"
